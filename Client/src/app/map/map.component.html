@@ -1,0 +1,57 @@
+<div >
+    <app-nav-bar></app-nav-bar>
+</div>
+<br><br><br>
+<div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container">
+    <div  class="map" id="map" class="match-parent" >
+    </div>
+
+  <div *ngIf="isForm" >
+  <form [formGroup]="form" (ngSubmit)="onSave()" action="/map/newMap" method="post" enctype="multipart/form-data" >
+    <mat-card>
+     <div class="form-group">
+         <mat-form-field appearance="standard" >
+           <mat-label>About</mat-label>
+           <input matInput type="text"  placeholder="About" formControlName="about" autocomplete="off" required name="about"/>
+         <mat-hint><span *ngIf="!about.valid && (about.touched)"
+          class="error-block">
+          Please fill the required fields
+        </span></mat-hint>
+      </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <label>Select Image  :  </label>
+         <input type="file" id="file" name="profile" (change)="fileChangeEvent($event)" formControlName="file" required multiple />
+         <mat-hint><span *ngIf="!file.valid && (file.touched)"
+           class="error-block">
+           Please Upload Image
+         </span></mat-hint>
+        </div>
+
+       <div class="form-group">
+         <mat-form-field appearance="standard">
+           <mat-label>Address 1</mat-label>
+           <input matInput placeholder="address 1" formControlName="address1" autocomplete="off" required name="address1"/>
+           <mat-hint><span *ngIf="!address1.valid && (address1.touched)"
+          class="error-block">
+          Please fill the required fields
+        </span></mat-hint>
+      </mat-form-field>
+       </div>
+ 
+       <div class="form-group">
+         <mat-form-field appearance="standard">
+           <mat-label>Address 2</mat-label>
+           <input matInput placeholder="address 2" formControlName="address2" autocomplete="off" name="address2"/>
+         </mat-form-field>
+       </div>
+ 
+    <div class="form-group" style="margin-left: 220px;">
+     <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid" >Save</button>&nbsp;
+     <button mat-raised-button color="warn" type="reset" (click)="toggle()" >Reset</button>
+    </div>
+ </mat-card>
+ </form>
+</div>
+</div>

@@ -1,0 +1,17 @@
+<div class="button">
+  <button
+    mat-raised-button
+    (click)="updateArticle()"
+    routerLink="/article"
+    color="accent"
+  >
+    Save</button
+  >&nbsp;
+  <button mat-raised-button routerLink="/article" color="accent">Cancle</button>
+</div>
+
+<div class="container">
+  <header class="header">
+  </header>
+  <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+</div>

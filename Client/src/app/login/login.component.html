@@ -1,0 +1,31 @@
+<div class="content-body">
+  <br /><br /><br /><br />
+  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+    <mat-card>
+      <mat-card-title>LogIn Form</mat-card-title>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>UserName</mat-label>
+          <input matInput placeholder="Enter UserName" required ngModel name="userName"/>
+          <mat-icon matSuffix>perm_identity</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Password" required ngModel name="password"/>
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="!loginForm.valid" mat-stroked-button>
+          Login
+        </button>
+      </div>
+      <br />
+      <div>
+        <a routerLink="/register">Or Register Here</a>
+      </div>
+    </mat-card>
+  </form>
+</div>

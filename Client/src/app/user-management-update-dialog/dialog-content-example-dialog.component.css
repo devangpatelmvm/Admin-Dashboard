@@ -1,0 +1,9 @@
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+::ng-deep .custom-style {
+  background-color: #579c5a;
+  color: white;
+}

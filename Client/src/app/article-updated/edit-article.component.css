@@ -1,0 +1,29 @@
+.button {
+  margin-top: 15px;
+  display: flex;
+  margin-left: 82%;
+}
+
+.header {
+  margin-top: 2px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.container {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100%;
+  max-width: 1100px;
+  min-width: 720px;
+  margin: auto;
+  /* margin-top: 4%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+::ng-deep .custom-style {
+  background-color: #579c5a;
+  color: white;
+}

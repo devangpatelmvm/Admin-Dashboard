@@ -1,0 +1,21 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+.body {
+  margin-top: 70px;
+}
+mat-grid-tile {
+  background: lightblue;
+}
+
+
+.chart {
+  margin-right: 35%;
+  margin-top: 10%;
+} 

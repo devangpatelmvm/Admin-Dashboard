@@ -1,0 +1,13 @@
+.content-body{
+    min-height: 100%;
+    padding: 60px 1rem;
+    padding-left: 300px;
+    padding-right: 300px;
+    background-color: #16bca8;
+    display: block;
+    text-align: center;
+}
+.mat-form-field {
+    width: 100%;
+    max-width: 600px;
+  }

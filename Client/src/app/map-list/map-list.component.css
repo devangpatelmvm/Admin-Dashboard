@@ -1,0 +1,40 @@
+
+ table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td,
+  th {
+    width: 20%;
+  }
+  .mat-card {
+    text-align: center;
+  }
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  .body {
+    margin-top: 6%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+  } 
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+    background: #cbefa3;
+  }
+  

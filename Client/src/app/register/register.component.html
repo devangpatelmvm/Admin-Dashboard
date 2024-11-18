@@ -1,0 +1,153 @@
+<div class="content-body">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title> Registration Form </mat-card-title>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Enter firstName</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="firstName"
+            formControlName="firstName"
+            class="form-control"
+          />
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <mat-hint><span
+              *ngIf="!firstName.valid && (firstName.touched || userSubmitted)"
+              class="error-block"
+            >
+              Length Should Be Minimum 3 Alphabetic Characters
+            </span></mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Enter lastName</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="lastName"
+            formControlName="lastName"
+            class="form-control"
+          />
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <mat-hint
+            ><span
+              *ngIf="!lastName.valid && (lastName.touched || userSubmitted)"
+              class="error-block"
+            >
+              Enter valid Last Name
+            </span></mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Enter UserName</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="userName"
+            formControlName="userName"
+            class="form-control"
+          />
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <mat-hint
+            ><span
+              *ngIf="!userName.valid && (userName.touched || userSubmitted)"
+              class="error-block"
+            >
+              Length Should Be Minimum 3 Alphabetic Characters
+            </span></mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Enter Email</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Email"
+            formControlName="email"
+            class="form-control"
+          />
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-hint
+            ><span *ngIf="!email.valid && email.touched" class="error-block">
+              Please Provide Valid Email
+            </span></mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Enter Phone</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="Phone"
+            formControlName="phone"
+            class="form-control"
+          />
+          <mat-icon matSuffix>contact_phone</mat-icon>
+          <mat-hint
+            ><span *ngIf="!phone.valid && phone.touched" class="error-block">
+              Length Should Be 10 Digit Only
+            </span></mat-hint
+          >
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Enter Password</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="password"
+            formControlName="password"
+            class="form-control"
+          />
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-hint
+            ><span
+              *ngIf="!password.valid && password.touched"
+              class="error-block">Minimum Length Should Be 6 Numbers</span></mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="standard">
+          <mat-label>Enter confirmpassword</mat-label>
+          <input
+            matInput
+            type="password"
+            placeholder="confirmPassword"
+            formControlName="confirmPassword"
+            class="form-control"
+          />
+          <mat-icon matSuffix>lock</mat-icon>
+          <mat-hint
+            ><span
+              *ngIf="!confirmPassword.valid && confirmPassword.touched"
+              class="error-block"
+            >
+              Password Is Mismatched
+            </span></mat-hint
+          >
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-checkbox class="admin" formControlName="admin" class="form-control" >For Admin</mat-checkbox>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" mat-stroked-button [disabled]="!registrationForm.valid" >Register</button>
+      </div>
+      <br />
+      <div class="form-group">
+        <a routerLink="/login">Login Here</a>
+      </div>
+    </mat-card>
+  </form>
+</div>

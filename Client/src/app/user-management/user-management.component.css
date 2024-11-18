@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 20px;
+  width: 100%;
+}
+.mat-card {
+  text-align: center;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
+.body {
+  margin-top: 6%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+  background: #cbefa3;
+}
+
+.highlight {
+  background: #a4b9a5; /* green */
+}

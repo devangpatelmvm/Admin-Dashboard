@@ -1,0 +1,25 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  z-index: 1;
+  width: 100%;
+}
+
+.mat-list-item {
+  display: inline-block;
+  height: auto;
+  width: auto;
+}
+
+.active-list-item {
+  background-color: #ff006a;
+}
+
+/* a:hover{
+  text-decoration: none;
+  color: white;
+} */

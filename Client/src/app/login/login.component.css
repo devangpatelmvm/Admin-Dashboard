@@ -1,0 +1,30 @@
+.content-body {
+  min-height: 100%;
+  padding: 25px 1rem;
+  padding-left: 340px;
+  padding-right: 340px;
+  display: block;
+  text-align: center;
+
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+.mat-form-field {
+  width: 100%;
+  max-width: 500px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

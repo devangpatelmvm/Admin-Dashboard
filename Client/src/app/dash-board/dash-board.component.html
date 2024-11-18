@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<div >
+  <app-nav-bar></app-nav-bar>
+</div>
+<div class="body">
+  <div style="text-align: center">
+    <span><h2> Current Time : {{ time | date: "hh:mm:ss a" }} </h2></span>
+  </div>
+
+  <div>
+  <mat-grid-list cols="2" rowHeight="8:7" gutterSize="5px">
+  <mat-grid-tile>
+ <mat-grid-tile-header style="text-align: center;">Activities Pane</mat-grid-tile-header>
+ <div style ="margin-right: 20%; margin-bottom:5%">
+   <hr>
+     <div *ngFor="let item of activity; let i = index">
+              <div *ngIf="i < 5">
+                <p *ngIf="item.data == null || undefined ">
+                  <mat-icon>supervisor_account</mat-icon> User <a routerLink="/user-management">{{ item.user }}</a> {{
+                  item.UpdatedDate == item.createdDate ? "registered" : "Updated" }} at
+                  {{item.UpdatedDate | dateAgo }}
+                </p>
+                <p *ngIf="item.data != null || undefined" >
+                  <span class="material-symbols-outlined"> article</span><a routerLink="/article">{{ item.data | articleData }} </a> Article
+                  {{item.UpdatedDate != item.createdDate ? "updated" : "created" }} By {{item.user}} {{item.UpdatedDate | dateAgo }}
+                </p>
+                <hr>
+              </div>
+      </div>
+ </div>
+
+  </mat-grid-tile>
+
+  <mat-grid-tile >
+    
+    <mat-grid-tile-header>Chart Pane</mat-grid-tile-header>
+    <div>
+      <mat-button-toggle-group [(ngModel)]="chartType"  style="margin-bottom:160%; margin-left: 180%;">
+        <mat-button-toggle #tooltip="matTooltip" matTooltip="Pie Chart" value="pie">
+          <mat-icon> pie_chart</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle #tooltip="matTooltip" matTooltip="Bar Chart" value="bar">
+          <mat-icon> bar_chart</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle #tooltip="matTooltip" matTooltip="Line Chart" value="line">
+          <mat-icon> multiline_chart</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle #tooltip="matTooltip" matTooltip="Doughtnut Chart" value="doughnut">
+          <mat-icon>donut_large</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle #tooltip="matTooltip" matTooltip="Radar Chart" value="radar"><mat-icon> radar_chart</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+      <div class="chart">
+        <div><canvas
+            baseChart
+            [data]="pieChartData"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [type]="chartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+         </div>
+      </div>
+  </mat-grid-tile>
+</mat-grid-list>
+</div>
+
+</div>
+

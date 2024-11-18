@@ -1,0 +1,96 @@
+<h2 mat-dialog-title>User Details Update</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="editForm">
+    <div class="form-group">
+      <mat-form-field appearance="standard">
+        <mat-label>Enter firstName</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="firstName"
+          id="firstName"
+          formControlName="firstName"
+          class="form-control"
+        />
+        <mat-icon matSuffix>perm_identity</mat-icon>
+        <mat-hint
+          ><span
+            *ngIf="!firstName.valid && firstName.touched"
+            class="error-block"
+          >
+            Length Should Be Minimum 3 Alphabetic Characters
+          </span></mat-hint
+        >
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field appearance="standard">
+        <mat-label>Enter lastName</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="lastName"
+          formControlName="lastName"
+          class="form-control"
+        />
+        <mat-icon matSuffix>perm_identity</mat-icon>
+        <mat-hint
+          ><span
+            *ngIf="!lastName.valid && lastName.touched"
+            class="error-block"
+          >
+            Enter valid Last Name
+          </span></mat-hint
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="standard">
+        <mat-label>Enter Phone</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="Phone"
+          formControlName="phone"
+          class="form-control"
+        />
+        <mat-icon matSuffix>contact_phone</mat-icon>
+        <mat-hint
+          ><span *ngIf="!phone.valid && phone.touched" class="error-block">
+            Length Should Be 10 Digit Only
+          </span></mat-hint
+        >
+      </mat-form-field>
+    </div>
+
+     <div class="form-group">
+      <mat-form-field appearance="standard">
+        <mat-label>Enter Password To Update User Data</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="password"
+          formControlName="password"
+          class="form-control"
+        />
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-hint
+          ><span
+            *ngIf="!password.valid && password.touched"
+            class="error-block"
+          >
+            Please Provide Valid Password
+          </span></mat-hint
+        >
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    mat-flat-button
+    color="primary" mat-button cdkFocusInitial (click)="updateUser()">Update</button>
+    
+  <button mat-flat-button color="warn" mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
